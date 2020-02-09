@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  server:
+    build: server
+    volumes:
+      - ./server:/usr/src/app
+    ports:
+      - 5000:5000
+
+  web:
+    build: web
+    volumes:
+      - ./web:/app
+      - /app/node_modules
+    ports:
+      - 8080:8080
+    depends_on:
+      - server
+
+
+
+
+
+

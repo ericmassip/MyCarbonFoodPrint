@@ -1,0 +1,3 @@
+Flask==1.1.1
+Flask-CORS==3.0.8
+pandas==0.25.3

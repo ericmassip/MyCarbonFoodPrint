@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify
 
-from .controller import FoodController
+from business_logic.food.controller import FoodController
 
 food_service = Blueprint('food_service', __name__)
 

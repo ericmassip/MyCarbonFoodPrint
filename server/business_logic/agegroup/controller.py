@@ -1,4 +1,4 @@
-from ..utils.config import AGE_GROUPS
+from utils.config import AGE_GROUPS
 
 
 class AgeGroupController:

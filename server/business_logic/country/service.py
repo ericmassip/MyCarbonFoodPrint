@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from .controller import CountryController
+from business_logic.country.controller import CountryController
 
 country_service = Blueprint('country_service', __name__)
 

@@ -1,4 +1,4 @@
-from ..utils.config import FOOD_CATEGORY_ITEMS, co2_per_country_age_group
+from utils.config import FOOD_CATEGORY_ITEMS, co2_per_country_age_group
 
 
 class FoodController:

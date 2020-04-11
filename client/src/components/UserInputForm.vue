@@ -122,12 +122,13 @@
 </template>
 
 <script>
-import FoodItemsMultiselect from "@/components/FoodItemsMultiselect";
+import axios from 'axios';
+import FoodItemsMultiselect from '@/components/FoodItemsMultiselect';
 
 export default {
-  name: "UserInputForm",
+  name: 'UserInputForm',
   components: { FoodItemsMultiselect },
-  props: ["user"],
+  props: ['user'],
   data() {
     return {
       countries: [],
@@ -135,10 +136,10 @@ export default {
     };
   },
   mounted() {
-    this.$http.get("/country/all").then(response => {
+    axios.get('/country/all').then(response => {
       this.countries = response.data;
     });
-    this.$http.get("/agegroup/all").then(response => {
+    axios.get('/agegroup/all').then(response => {
       this.agegroups = response.data;
     });
   }

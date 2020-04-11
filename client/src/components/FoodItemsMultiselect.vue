@@ -2,7 +2,7 @@
   <b-container id="food-items-multiselect">
     <b-row>
       <h6 style="font-size:0.8rem;text-align:left">
-        <strong>{{ category.replace(/_/g, " ") }}</strong>
+        <strong>{{ category.replace(/_/g, ' ') }}</strong>
       </h6>
     </b-row>
     <b-row>
@@ -41,12 +41,13 @@
 </template>
 
 <script>
-import Multiselect from "vue-multiselect";
+import axios from 'axios';
+import Multiselect from 'vue-multiselect';
 
 export default {
-  name: "FoodItemsMultiselect",
+  name: 'FoodItemsMultiselect',
   components: { Multiselect },
-  props: ["category", "value"],
+  props: ['category', 'value'],
   data() {
     return {
       isDisabled: false,
@@ -55,7 +56,7 @@ export default {
     };
   },
   mounted() {
-    this.$http.get("/food/" + this.category).then(response => {
+    axios.get('/food/' + this.category).then(response => {
       this.options = response.data;
     });
   },

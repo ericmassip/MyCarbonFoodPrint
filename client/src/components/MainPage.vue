@@ -16,12 +16,13 @@
 </template>
 
 <script>
-import UserInputForm from "@/components/UserInputForm";
-import UserFootprintGauge from "@/components/UserFootprintGauge";
-import UserCharts from "@/components/UserCharts";
+import axios from 'axios';
+import UserInputForm from '@/components/UserInputForm';
+import UserFootprintGauge from '@/components/UserFootprintGauge';
+import UserCharts from '@/components/UserCharts';
 
 export default {
-  name: "MainPage",
+  name: 'MainPage',
   components: {
     UserInputForm,
     UserFootprintGauge,
@@ -66,11 +67,11 @@ export default {
     computeCountryCarbonFootprint() {
       try {
         if (this.user.country != null && this.user.agegroup != null) {
-          this.$http
+          axios
             .get(
-              "/food/carbonfootprint/" +
+              '/food/carbonfootprint/' +
                 this.user.country +
-                "/" +
+                '/' +
                 this.user.agegroup
             )
             .then(response => {
@@ -117,11 +118,11 @@ export default {
     },
     computeCountriesCarbonFootprint() {
       if (this.user.agegroup != null) {
-        this.$http
+        axios
           .get(
-            "/country/carbonfootprint/all/" +
+            '/country/carbonfootprint/all/' +
               this.user.agegroup +
-              "/" +
+              '/' +
               this.userCarbonFootprint
           )
           .then(response => {
@@ -140,7 +141,7 @@ export default {
 
       this.co2AvgWeeklyComparison[0].marker.color = this.co2AvgWeeklyComparison[0].x.map(
         function(v) {
-          return v == "YOU" ? "#28a745" : "#007bff";
+          return v == 'YOU' ? '#28a745' : '#007bff';
         }
       );
     },
@@ -150,9 +151,9 @@ export default {
           x: [],
           y: [],
           marker: {
-            color: "#007bff"
+            color: '#007bff'
           },
-          type: "bar"
+          type: 'bar'
         }
       ];
     }

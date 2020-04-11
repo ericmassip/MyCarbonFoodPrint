@@ -1,5 +1,5 @@
-from ..food.controller import FoodController
-from ..utils.config import COUNTRIES
+from business_logic.food.controller import FoodController
+from utils.config import COUNTRIES
 
 
 class CountryController:

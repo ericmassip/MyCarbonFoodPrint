@@ -1,5 +1,5 @@
 from flask import Blueprint, jsonify
-from .controller import AgeGroupController
+from business_logic.agegroup.controller import AgeGroupController
 
 agegroup_service = Blueprint('agegroup_service', __name__)
 

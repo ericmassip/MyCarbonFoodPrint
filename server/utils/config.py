@@ -1,8 +1,8 @@
 import pandas as pd
-from ..food.model import FoodItem
+from business_logic.food.model import FoodItem
 
-co2_per_country_age_group = pd.read_csv('~/Projects/MyCarbonFoodPrint/server/dataset/co2_per_country_age_group.csv')
-co2_footprint = pd.read_csv('~/Projects/MyCarbonFoodPrint/server/dataset/co2_footprint.csv', index_col='ID')
+co2_per_country_age_group = pd.read_csv('dataset/co2_per_country_age_group.csv')
+co2_footprint = pd.read_csv('dataset/co2_footprint.csv', index_col='ID')
 co2_footprint['Category'] = co2_footprint['Category'].apply(lambda x: x.replace("/", "_"))
 
 COUNTRIES = co2_per_country_age_group['Country'].unique().tolist()

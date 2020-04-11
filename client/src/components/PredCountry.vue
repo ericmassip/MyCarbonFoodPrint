@@ -10,7 +10,7 @@
 <script>
 export default {
   name:
-    "CountryPred" /*,
+    'CountryPred' /*,
   data(){
     return{
       country_pred:''
